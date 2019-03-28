@@ -1,47 +1,10 @@
 # 我不喜欢注释，大家自行学习即可
-
-if(F){
-  install.packages("devtools")
-  biocLite('DESeq2')
-}
-
-if(!require('devtools')){
-  install.packages("devtools",
-                   repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
-  
-}
-
-if(!require('hgu95av2.db')){
-  source("https://bioconductor.org/biocLite.R") 
-  options(BioC_mirror="https://mirrors.ustc.edu.cn/bioc/")  
-  BiocInstaller::biocLite('hgu95av2.db')
-}
-
-if(F){
-  install.packages("devtools",
-                   repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
-  library(devtools) 
-  source("https://bioconductor.org/biocLite.R") 
-  options(BioC_mirror="https://mirrors.ustc.edu.cn/bioc/")  
-  BiocInstaller::biocLite('remotes')
-  BiocInstaller::biocLite("jmzeng1314/biotrainee")
-  install.packages("matrixStats",repos="https://mirror.lzu.edu.cn/CRAN/")
-  
-  source("http://bioconductor.org/biocLite.R")
-  options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")
-  BiocInstaller::biocLite("GEOquery")
-  BiocInstaller::biocLite("clusterProfiler")
-  BiocInstaller::biocLite("ComplexHeatmap")
-  BiocInstaller::biocLite("maftools")
-  BiocInstaller::biocLite("ggplot2")
-  BiocInstaller::biocLite("jmzeng1314/biotrainee")
-}
-
+# 首先需要安装一系列包，参考周末班培训 http://www.bio-info-trainee.com/3727.html 代码
 
 rm(list=ls())
 ## 1-10
 if(T){
-  
+  # BiocManager::install('CLL')
   suppressPackageStartupMessages(library(CLL))
   data(sCLLex)
   sCLLex
@@ -53,6 +16,7 @@ if(T){
   dim(exprSet)
   exprSet[1:5,1:5]
   
+  # BiocManager::install('hgu95av2.db')
   library(hgu95av2.db)
   ls("package:hgu95av2.db") 
   
@@ -72,18 +36,34 @@ if(T){
   ids=ids[match(rownames(exprSet),ids$probe_id),]
   head(ids)
   exprSet[1:5,1:5]
-  tmp = by(exprSet,ids$symbol,
-           function(x) rownames(x)[which.max(rowMeans(x))] )
-  probes = as.character(tmp)
-  dim(exprSet)
-  exprSet=exprSet[rownames(exprSet) %in% probes ,]
-  dim(exprSet)
+ if(F){
+   tmp = by(exprSet,ids$symbol,
+            function(x) rownames(x)[which.max(rowMeans(x))] )
+   probes = as.character(tmp)
+   dim(exprSet)
+   exprSet=exprSet[rownames(exprSet) %in% probes ,]
+   dim(exprSet)
+   
+   rownames(exprSet)=ids[match(rownames(exprSet),ids$probe_id),2]
+   exprSet[1:5,1:5]
+ }
+ 
+  identical(ids$probe_id,rownames(exprSet))
+  dat=exprSet
+  ids$median=apply(dat,1,median) #ids新建median这一列，列名为median，同时对dat这个矩阵按行操作，取每一行的中位数，将结果给到median这一列的每一行
+  ids=ids[order(ids$symbol,ids$median,decreasing = T),]#对ids$symbol按照ids$median中位数从大到小排列的顺序排序，将对应的行赋值为一个新的ids
+  ids=ids[!duplicated(ids$symbol),]#将symbol这一列取取出重复项，'!'为否，即取出不重复的项，去除重复的gene ，保留每个基因最大表达量结果s
+  dat=dat[ids$probe_id,] #新的ids取出probe_id这一列，将dat按照取出的这一列中的每一行组成一个新的dat
+  rownames(dat)=ids$symbol#把ids的symbol这一列中的每一行给dat作为dat的行名
+  dat[1:4,1:4]  #保留每个基因ID第一次出现的信息
+  dim(dat)
   
-  rownames(exprSet)=ids[match(rownames(exprSet),ids$probe_id),2]
-  exprSet[1:5,1:5]
 }
+
+exprSet=dat
 exprSet['GAPDH',]
 boxplot(exprSet[,1])
+boxplot(exprSet['GAPDH',])
 exprSet['ACTB',]
 
 
@@ -95,8 +75,7 @@ head(exprSet_L)
 ### ggplot2 
 library(ggplot2)
 p=ggplot(exprSet_L,
-         aes(x=sample,y=value,fill=group))
-+geom_boxplot()
+         aes(x=sample,y=value,fill=group))+geom_boxplot()
 print(p)
 p=ggplot(exprSet_L,aes(x=sample,y=value,fill=group))+geom_violin()
 print(p)
@@ -161,10 +140,23 @@ plot(as.dendrogram(hc), nodePar = nodePar,  horiz = TRUE)
 
 ## PCA 
 
+# BiocManager::install('ggfortify')
 library(ggfortify)
 df=as.data.frame(t(exprSet))
 df$group=group_list 
 autoplot(prcomp( df[,1:(ncol(df)-1)] ), data=df,colour = 'group')
+
+library("FactoMineR")#画主成分分析图需要加载这两个包
+library("factoextra") 
+df=as.data.frame(t(exprSet))
+dat.pca <- PCA(df, graph = FALSE)#现在dat最后一列是group_list，需要重新赋值给一个dat.pca,这个矩阵是不含有分组信息的
+fviz_pca_ind(dat.pca,
+             geom.ind = "point", # show points only (nbut not "text")
+             col.ind = group_list, # color by groups
+             # palette = c("#00AFBB", "#E7B800"),
+             addEllipses = TRUE, # Concentration ellipses
+             legend.title = "Groups"
+)
 
 ## t.test  
 dat = exprSet
@@ -192,6 +184,8 @@ design <- model.matrix(~0+factor(group_list))
 colnames(design)=levels(factor(group_list))
 rownames(design)=colnames(exprSet)
 design
+
+## 下面的 contrast.matrix 矩阵非常重要，制定了谁比谁这个规则
 contrast.matrix<-makeContrasts(paste0(unique(group_list),collapse = "-"),levels = design)
 contrast.matrix 
 ##这个矩阵声明，我们要把progres.组跟stable进行差异分析比较
@@ -217,7 +211,8 @@ this_tile <- paste0('Cutoff for logFC is ',round(logFC_cutoff,3),
                     '\nThe number of up gene is ',nrow(DEG[DEG$change =='UP',]) ,
                     '\nThe number of down gene is ',nrow(DEG[DEG$change =='DOWN',])
 )
-
+this_tile
+head(DEG)
 g = ggplot(data=DEG, aes(x=logFC, y=-log10(P.Value), color=change)) +
   geom_point(alpha=0.4, size=1.75) +
   theme_set(theme_set(theme_bw(base_size=20)))+
@@ -230,8 +225,8 @@ print(g)
 head(nrDEG)
 head(DEG_t.test)
 DEG_t.test=DEG_t.test[rownames(nrDEG),]
-plot(DEG_t.test[,3],nrDEG[,1])
-plot(DEG_t.test[,4],nrDEG[,4])
+plot(DEG_t.test[,3],nrDEG[,1]) ## 可以看到logFC是相反的
+plot(DEG_t.test[,4],nrDEG[,4]) # 可以看到使用limma包和t.test本身的p值差异尚可接受
 plot(-log10(DEG_t.test[,4]),-log10(nrDEG[,4]))
 
 exprSet['GAPDH',]

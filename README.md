@@ -52,7 +52,7 @@
 
 教学视频在：https://www.bilibili.com/video/av28813815 
 
-####作业
+#### 作业
 
 - 下载**bowtie2软件压缩包解压**并且找到里面的示例数据，**走文本处理流程 ，走基本比对找变异流程**
   - 参考：<https://mp.weixin.qq.com/s/5rduc9Rxjtz_Bj_s--Z6Og>
@@ -103,7 +103,9 @@
 
 视频都在B站：<https://mp.weixin.qq.com/s/gqib-RtbC315Zad-8KmkXw>
 
-### 关于统计可视化
+下游分析(个性化)才是考验工程师水平：https://mp.weixin.qq.com/s/7MKDptXy9Di49_yoYNdrvw
+
+###  关于统计可视化
 
 这方面我的分享做的远远不够，推荐一下 **统计学**基础：<https://mp.weixin.qq.com/s/OtB2h6f00U2SRZLzveJKfQ>
 
@@ -130,9 +132,9 @@
 
 ### 关于行业发展前景预测
 
-不知道，尽量提升自己的能力先。
+不知道，尽量提升自己的能力先吧
 
 ### 关于团队招新
 
-随时行业，详细说明为什么要跟随我做知识分享即可，参考：https://mp.weixin.qq.com/s/jn1Xe7IDdTY_9tDpz-3Vfw
+随时行业，详细说明为什么要跟随我做知识分享即可，参考：https://mp.weixin.qq.com/s/jn1Xe7IDdTY_9tDpz-3Vfw 
 

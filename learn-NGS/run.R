@@ -1,0 +1,7 @@
+# BiocManager::install('Rsamtools')
+library(Rsamtools) 
+bam <- scanBam("examples/CHIP-seq.bam")
+names(bam[[1]]) 
+table(bam[[1]]$flag)
+head(bam[[1]][[3]])
+head(bam[[1]][[5]])

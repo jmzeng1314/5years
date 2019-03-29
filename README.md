@@ -136,5 +136,5 @@
 
 ### 关于团队招新
 
-随时行业，详细说明为什么要跟随我做知识分享即可，参考：https://mp.weixin.qq.com/s/jn1Xe7IDdTY_9tDpz-3Vfw 
+随时欢迎，详细说明为什么要跟随我做知识分享即可，参考：https://mp.weixin.qq.com/s/jn1Xe7IDdTY_9tDpz-3Vfw 
 

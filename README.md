@@ -10,6 +10,14 @@
 
 这三类生信工程师养成的侧重点不一样，但是数据分析能力的获取的第一步是类似的，下面看我娓娓道来，如果你是初入我们行业，那么下面的资源和指导不容错过！
 
+### 关于生物学背景
+
+因为绝大部分转生物信息学工程师的小伙伴都是有至少4年的生物学背景，生物大分子，中心法则都没有问题，但是也有部分计算机背景学生转过来，会不停的问我该如何补充生物学背景，这里推荐慕课(<https://www.icourse163.org/>)的两个课程
+
+- 复旦大学的基因组学：<https://www.icourse163.org/course/FUDAN-1002839009#/info>
+- 四川大学的细胞生物学：<https://www.icourse163.org/course/SCU-46011>
+- 其它课程请自行搜索，按需学习，争取掌握生信基础100讲：https://mp.weixin.qq.com/s/Gr_0H4-GaTYkgUkbNHcMcg
+
 ### 关于R语言学习
 
 专门为R语言建立了 GitHub 仓库存放相关学习路线指导资料：<https://github.com/jmzeng1314/R_bilibili>
@@ -51,6 +59,8 @@
 ```
 
 教学视频在：https://www.bilibili.com/video/av28813815 
+
+中英文命令对照：https://mp.weixin.qq.com/s/iEYSX9EM-y1QKRK7KMZYfA
 
 #### 作业
 
@@ -130,7 +140,7 @@
 - [2019年2月份第3周（总第55周）2.5万汉族人的GWAS乳腺癌风险基因](http://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&mid=2247488984&idx=1&sn=e1ee425ef84b59d5f9f0a4d704b3c32f&chksm=9b485563ac3fdc75e3a4a3e05a327b00c5210bde240268d37e4a3770b82d56683b841571e57a&scene=21#wechat_redirect)
 - 持续更新~~~~
 
-### 关于行业发展前景预测
+###  关于行业发展前景预测
 
 不知道，尽量提升自己的能力先吧
 

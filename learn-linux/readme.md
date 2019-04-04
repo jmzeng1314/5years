@@ -9,6 +9,8 @@
 ```shell 
 mkdir -p ~/biosoft
 cd ~/biosoft
+# 针对不同系统下载不同的版本
+# 优先下载最新版
 wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.4.3/bowtie2-2.3.4.3-linux-x86_64.zip 
 unzip bowtie2-2.3.4.3-linux-x86_64.zip 
 cd ~/biosoft/bowtie2-2.3.4.3-linux-x86_64/example/reads

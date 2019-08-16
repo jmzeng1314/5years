@@ -1,6 +1,8 @@
 # 从事生物信息学数据分析5周年的一些思考和总结
 
-曾经在生信技能树公众号发布的生信工程师入门最佳指南 ：https://mp.weixin.qq.com/s/vaX4ttaLIa19MefD86WfUA 
+依托于2018在生信技能树公众号发布的生信工程师入门最佳指南 ：https://mp.weixin.qq.com/s/vaX4ttaLIa19MefD86WfUA 
+
+截止到今天(2019年9月)我的生信之路已经有6个年头了。
 
 > 先搞清楚生信工程师都在干嘛：
 
@@ -8,7 +10,7 @@
 - 应用项目研发-偏编程和流程
 - 科研热点追踪或者前沿探索
 
-这三类生信工程师养成的侧重点不一样，但是数据分析能力的获取的第一步是类似的，下面看我娓娓道来，如果你是初入我们行业，那么下面的资源和指导不容错过！
+这三类生信工程师养成的侧重点不一样，但是数据分析能力的获取的第一步是类似的，如果你是初入我们行业，那么下面的资源和指导不容错过！
 
 ### 关于生物学背景
 
@@ -23,12 +25,6 @@
 专门为R语言建立了 GitHub 仓库存放相关学习路线指导资料：<https://github.com/jmzeng1314/R_bilibili>
 
 找到任何一本配套R书籍，然后就可以学习我的教学视频，都在：https://www.bilibili.com/video/av25643438/  同样的有配套教学大纲：文档链接：https://mubu.com/doc/HGT7XBmgg 密码：muwu 
-
-很多朋友之所以学习R语言其实就是为了重复一些简单的数据库挖掘文章，所以我也顺便录制了GEO数据库挖掘课程：
-
-- 代码在：https://github.com/jmzeng1314/geo
-- 配套教学视频在B站：https://www.bilibili.com/video/av26731585/ 
-- 还有一个公共数据库挖掘：https://www.bilibili.com/video/av37568990 
 
 #### 作业
 
@@ -123,6 +119,24 @@
 
 可视化我也一直在努力当中：https://mubu.com/doc/3L0wkgGUVg (绘图大全)
 
+### 关于数据挖掘
+
+很多朋友之所以学习R语言其实就是为了重复一些简单的数据库挖掘文章，所以我也顺便录制了GEO数据库挖掘课程：
+
+- 代码在：https://github.com/jmzeng1314/geo
+- 配套教学视频在B站：https://www.bilibili.com/video/av26731585/ 
+- 还有一个公共数据库挖掘：https://www.bilibili.com/video/av37568990 
+
+我这边的学徒实习生一直在分析数据挖掘技巧，目录在：[学徒数据挖掘第二期汇总之多分组基因注释代码大放送（compareCluster）](http://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&mid=2247490583&idx=1&sn=0318cc50f22dd09f11864b66064d9bf0&chksm=9b485cacac3fd5baa5b85473814ad56f62f72239a6c8299fd8673b8a2087da975e819d26f8f8&scene=21#wechat_redirect)
+
+- [热图、韦恩图、GO富集分析图](https://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&mid=2247488044&idx=1&sn=c5f45ecb9fb5b5ec0fdf91fe3cadf930&scene=21#wechat_redirect)
+- [纯R代码实现ssGSEA算法评估肿瘤免疫浸润程度](https://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&mid=2247487965&idx=1&sn=60a7f4b692da9892f61639d06e961a80&scene=21#wechat_redirect)
+- [按基因在染色体上的顺序画差异甲基化热图](https://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&mid=2247487877&idx=1&sn=a89e9429e02766e57c1ccff6ddf03820&scene=21#wechat_redirect)
+- [有生物学意义的复杂热图](https://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&mid=2247487824&idx=1&sn=5c551ae57c5e3734e564c9e326450a60&scene=21#wechat_redirect)
+- [干扰MYC-WWP1通路重新激活PTEN的抑癌活性——3步搞定GSEA分析](https://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&mid=2247487767&idx=1&sn=6cd62497afdfd6ff49e053f0bdad74ab&scene=21#wechat_redirect)
+- [TCGA正常血液样本中PD-L1与BRCA1和NBS1的表达量相关性](https://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&mid=2247487719&idx=1&sn=46ee2c0c2974a0819e7641ff27e5ede4&scene=21#wechat_redirect)
+- [肿瘤异质性+免疫浸润细胞数据挖掘(可能是最简单的3分文章了)](http://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&mid=2247488138&idx=1&sn=b56bbd1fa24631f214462f7164d0a58e&chksm=fa46d7b7cd315ea1c5bfc9b1ef88049757fe567aff533525b5fdee251cead5a71abdfa0981c4&scene=21#wechat_redirect) 
+
 ### 关于科研思维建立
 
 因为本科毕业后就一直在公司工作，并没有实际负责过科研项目，现在博士阶段才有机会来建立科研思维，所以这方面我还是在探索阶段， 仅仅是列出我博士第一年的一些努力：
@@ -142,9 +156,23 @@
 
 ###  关于行业发展前景预测
 
-不知道，尽量提升自己的能力先吧
+不知道，尽量提升自己的能力先吧，所以我们举办了第一届生物信息学人才发展论坛：
+
+- [大白话讲清楚第一届生信人才发展论坛我们分享了啥](http://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&mid=2247490633&idx=1&sn=d5fd0728c9c47daeaa488f130e100669&chksm=9b485cf2ac3fd5e47fa974b6f0f613344fe8365ab93efa69c0d2cfb72521e23a15cb75c7f3f2&scene=21#wechat_redirect)
+
+  [一百个参会者有一百个生信人才发展论坛感想](http://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&mid=2247490639&idx=1&sn=5e69e767e5922562a29ffdf7fe83c549&chksm=9b485cf4ac3fd5e23a315af5cfaa3ca2cde9b56cca933a2b0ed5e3f7efebd38fb9911c4ed9d6&scene=21#wechat_redirect)
+
+- [一百个参会感言（5）](http://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&mid=2247490655&idx=1&sn=2893ca4b6f6c7cdf4ea936f7b9d6579e&chksm=9b485ce4ac3fd5f2309ede42dc8e652cb8a4d467e8366deb8bb073367b3e0ec4f9ccb47503b9&scene=21#wechat_redirect)
+
+- [一百个参会感言（10）](http://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&mid=2247490655&idx=6&sn=71f750b90884dab3eef8749b830a3134&chksm=9b485ce4ac3fd5f2ddc8af46313edc758d96d686bad7ef70450d4bee002a9ff24cdede962851&scene=21#wechat_redirect)
+
+- 感言11，https://mp.weixin.qq.com/s/PuMBVj2h9SGZRhOHEr0Qig 
 
 ### 关于团队招新
 
 随时欢迎，详细说明为什么要跟随我做知识分享即可，参考：https://mp.weixin.qq.com/s/jn1Xe7IDdTY_9tDpz-3Vfw 
+
+另外，我们生信技能树常年招学徒：https://mp.weixin.qq.com/s/9CFW37FrMbZsjuj--TPWKA
+
+
 
